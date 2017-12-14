@@ -28,7 +28,7 @@
       "additionalSetColors": []
     },
     "versionFirst": "4.5.1",
-    "uniqCompNum": 63,
+    "uniqCompNum": 81,
     "versionPublish": "4.5.1"
   },
   "pages": {
@@ -42,6 +42,29 @@
         "html_before": ""
       },
       "components": [
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-title, .mbr-text": {
+              "padding-bottom": "1rem"
+            }
+          },
+          "_name": "content6",
+          "_customHTML": "<section class=\"content6 mbr-section\" plugins=\"amp-main\" group=\"Article\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background3.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#15181b\" selected=\"\">\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-6\">\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-bold mbr-white mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\">ACCELERATED MOBILE PAGE</h2>\n                <p class=\"mbr-text align-center mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\" mbr-article=\"\" data-multiline=\"\">The AMP Project is an open-source initiative aiming to make the web better for all. The project enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms.<a href=\"https://ampproject.org\" class=\"text-secondary\">Read more...</a>\n                </p>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" mbr-buttons=\"\" mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove\">\n                    <a class=\"btn btn-primary\" href=\"https://ampproject.org\">LEARN MORE</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "qDLyLuyPe1",
+          "_anchor": "content6-26",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
         {
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
@@ -79,34 +102,51 @@
                   "display": "none"
                 }
               }
+            },
+            ".map-placeholder": {
+              "display": "none"
+            },
+            "h4": {
+              "padding-top": "5rem",
+              "color": "#767676",
+              "text-align": "center"
             }
           },
           "_name": "map1",
-          "_customHTML": "<section class=\"map\" group=\"Maps\" plugins=\"amp-main,amp-iframe\">\n\n    <mbr-parameters>\n    <!-- Block of parameters for component -->\n\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"6\" step=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"6\" step=\"1\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n        <input type=\"map\" title=\"Map\" name=\"googleMap\">\n        <header><b style=\"color: #ffde00; padding-right: 1rem;\">Warning!</b>The iframe must be either 600 px away from the top or not within the first 75% of the viewport. It's amp constraint. If you place it closer, the block will be moved below.</header>\n    <!-- End block of parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-row mbr-justify-content-center\">\n        <div class=\"google-map\" mbr-map=\"googleMap\">\n    </div>\n</div></section>\n",
-          "_cid": "qDLmfGWEOO",
-          "_anchor": "map1-1q",
+          "_customHTML": "<section class=\"map\" group=\"Maps\" plugins=\"amp-main,amp-iframe\">\n\n    <mbr-parameters>\n    <!-- Block of parameters for component -->\n\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"6\" step=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"6\" step=\"1\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n        <input type=\"map\" title=\"Map\" name=\"googleMap\">\n        <header><b style=\"color: #ffde00; padding-right: 1rem;\">Warning!</b>The iframe must be either 600 px away from the top or not within the first 75% of the viewport. It's amp constraint. If you place it closer, the block will be moved below.</header>\n    <!-- End block of parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-row mbr-justify-content-center\">\n        <div class=\"google-map\" mbr-map=\"googleMap\">\n        </div>\n        <div class=\"map-placeholder\">\n            <h4 placeholder=\"\">Google Map Initialization...</h4>\n        </div>\n    </div>\n</section>\n",
+          "_cid": "qDLzbBNO25",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "map1-28"
         },
         {
           "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
             "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
+            },
+            ".mbr-text": {
+              "margin": "0",
+              "letter-spacing": "2px"
+            },
+            ".mbr-section-title": {
+              "padding-bottom": "1rem",
+              "margin": "0"
+            },
+            ".mbr-section-btn": {
+              "padding-top": "1rem"
             }
           },
-          "_name": "slider1",
-          "_customHTML": "<section class=\"slider1 slider\" group=\"Sliders\" plugins=\"amp-main,amp-carousel\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n\n        <select title=\"Images\" name=\"imagesAmount\">\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\" selected>5</option>\n            <option value=\"6\">6</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background3.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#15181b\" selected>\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"slider-box\">\n            <amp-carousel class=\"carousel\" height=\"300\" layout=\"fixed-height\" type=\"carousel\">\n              <amp-img class=\"carousel-img\" src=\"../_images/img/01.jpg\" height=\"300\" width=\"400\" alt=\"a sample image\"><img class=\"mbr-temp\" src=\"../_images/img/01.jpg\" alt=\"Mobirise\"></amp-img>\n              <amp-img class=\"carousel-img\" src=\"../_images/img/02.jpg\" mbr-class=\"{'super-hide': imagesAmount < 2}\" height=\"300\" width=\"400\" alt=\"another sample image\"><img class=\"mbr-temp\" src=\"../_images/img/02.jpg\" alt=\"Mobirise\"></amp-img>\n              <amp-img class=\"carousel-img\" src=\"../_images/img/03.jpg\" mbr-class=\"{'super-hide': imagesAmount < 3}\" height=\"300\" width=\"400\" alt=\"and another sample image\"><img class=\"mbr-temp\" src=\"../_images/img/03.jpg\" alt=\"Mobirise\"></amp-img>\n              <amp-img class=\"carousel-img\" src=\"../_images/img/04.jpg\" mbr-class=\"{'super-hide': imagesAmount < 4}\" height=\"300\" width=\"400\" alt=\"a sample image\"><img class=\"mbr-temp\" src=\"../_images/img/04.jpg\" alt=\"Mobirise\"></amp-img>\n              <amp-img class=\"carousel-img\" src=\"../_images/img/05.jpg\" mbr-class=\"{'super-hide': imagesAmount < 5}\" height=\"300\" width=\"400\" alt=\"another sample image\"><img class=\"mbr-temp\" src=\"../_images/img/05.jpg\" alt=\"Mobirise\"></amp-img>\n              <amp-img class=\"carousel-img\" src=\"../_images/img/06.jpg\" mbr-class=\"{'super-hide': imagesAmount < 6}\" height=\"300\" width=\"400\" alt=\"and another sample image\"><img class=\"mbr-temp\" src=\"../_images/img/06.jpg\" alt=\"Mobirise\"></amp-img>  \n            </amp-carousel>\n        </div>\n    </div>\n</section>",
-          "_cid": "qDLm5DJS6h",
-          "_anchor": "slider1-1p",
+          "_name": "content12",
+          "_customHTML": "<section class=\"content12 mbr-section\" group=\"Article\" plugins=\"amp-main\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\" checked=\"\">\n<!--         <input type=\"color\" name=\"cardColor\" title=\"Card Color\" value=\"#f19814\"> -->\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background7.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ee7c6a\" selected=\"\">\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10\">\n                <h4 class=\"mbr-fonts-style mbr-section-title align-center mbr-white\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title,.mbr-section-btn\">What is AMP?</h4>\n                <p class=\"mbr-text mbr-fonts-style align-center mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text,.mbr-section-btn\">The Accelerated Mobile Pages Project (AMP) is an online publishing format, originally created by<a href=\"https://mobirise.com\" class=\"text-black\">Google</a>as an alternative to Facebook’s Instant Articles. It’s a way to optimize web pages for mobile browsing using a special code–AMP-HTML.</p>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                    <a class=\"btn btn-md btn-white-outline\" href=\"https://mobirise.com\">READ MORE</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n",
+          "_cid": "qDLyMWOATK",
+          "_anchor": "content12-27",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
